@@ -19,6 +19,22 @@ The testbed has 4 major components:
 * `Website/CLI` : Website (not included in this repository) or CLI is used by the end user to schedule, monitor, update and delete experiments on LEOScope and to download the results/logs, once the experiments are completed.
 * `Cloud Storage` : The experiment logs are uploaded on Cloud storage by the measurement nodes and the end-user is updated once the logs are available on Cloud Storage.
 
+## Understanding the Codebase
+
+📘 **[CODEBASE_FLOW.md](CODEBASE_FLOW.md)** - Comprehensive guide explaining how the system works from end-to-end
+- Complete flow from researchers submitting experiments to execution on nodes
+- Detailed function call sequences with code references
+- Step-by-step walkthrough of each component interaction
+- Complete example trace
+- Debugging tips and patterns
+
+📝 **[QUICK_REFERENCE.md](QUICK_REFERENCE.md)** - Quick lookup guide
+- System architecture diagrams
+- Key files and their purposes
+- Common commands and API reference
+- Database schemas
+- Debugging checklist
+
 ## Repository Structure
 
 * `cli\` : Code related to handling of the CLI commands to perform tasks on LEOScope.
