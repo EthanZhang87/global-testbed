@@ -28,6 +28,17 @@ The testbed has 4 major components:
 * `node\`: Handling of the experiment life-cycle at the measurement nodes. Life-cycle of an experiment includes: fetching experiments schedules from orchestrator, deploying the experiments, executing the experiments, uploading logs and deleting the experiment and logs once the experiments are over.
 * `orchestrator\`: Handling gRPC requests from the LEOScope website and the measurement nodes, scheduling experiments and updating the status of the nodes and experiments.
 
+## Understanding the Codebase
+
+For detailed documentation on the codebase architecture, function call stacks, and system flows:
+
+* **[DOCUMENTATION_INDEX.md](./DOCUMENTATION_INDEX.md)** - Start here! Index of all documentation with quick references
+* **[CODEBASE_FLOW_DOCUMENTATION.md](./CODEBASE_FLOW_DOCUMENTATION.md)** - Main architecture and kernel access flow documentation
+* **[KERNEL_ACCESS_FLOW.md](./KERNEL_ACCESS_FLOW.md)** - Detailed sequence diagrams and step-by-step explanations
+* **[ADDITIONAL_SYSTEM_FLOWS.md](./ADDITIONAL_SYSTEM_FLOWS.md)** - Job scheduling, node management, and other system flows
+
+These documents explain the function call stacks, component interactions, and design patterns used throughout the system.
+
 ## Getting Started 
 
 *<sup><sub>Currently, only available on exclusive request from the developers/maintainers.</sub></sup>
