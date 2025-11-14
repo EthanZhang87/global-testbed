@@ -31,15 +31,67 @@ Make sure you can access your Starlink dish:
 
 If you're using a custom router, ensure that traffic to `192.168.100.1` is routed to your Starlink dish.
 
-### 4. Copy the experiments script
+### 4. Copy the experiments scripts
 
-Copy `starlink_basic_experiments.py` to the `starlink-grpc-tools` directory:
+Copy the experiment scripts to the `starlink-grpc-tools` directory:
 
 ```bash
 cp /path/to/global-testbed/experiments/starlink_basic_experiments.py .
+cp /path/to/global-testbed/experiments/starlink_ping_monitor.py .
 ```
 
 ## Available Experiments
+
+### Ping Statistics Monitor (Real-time)
+
+**Duration:** Continuous (runs until stopped with Ctrl+C)
+
+**What it does:**
+- Polls the dish once per second for ping statistics
+- Extracts all ping-related fields from status and history data
+- Filters out obsolete fields (SNR, seconds_to_* except seconds_to_first_non_empty_slot)
+- Clears terminal and displays updated statistics each second
+- Shows real-time ping performance metrics
+
+**Use case:** Real-time monitoring of ping performance and latency statistics
+
+**Run it:**
+```bash
+python3 starlink_ping_monitor.py
+```
+
+**Sample output:**
+```
+================================================================================
+STARLINK PING STATISTICS MONITOR
+================================================================================
+Timestamp: 2024-01-15 10:30:45
+Iteration: 42
+Press Ctrl+C to stop
+================================================================================
+
+  ping_drop_rate                : 0.005
+  ping_latency_ms_mean          : 28.345
+  ping_latency_ms_p50           : 27.500
+  ping_latency_ms_p95           : 35.200
+  ping_latency_ms_p99           : 42.100
+  pop_ping_drop_rate            : 0.003
+  pop_ping_latency_ms           : 27.800
+  seconds_to_first_non_empty_slot : 0.000
+
+================================================================================
+```
+
+**Features:**
+- ✅ Updates every second
+- ✅ Clears terminal for clean display
+- ✅ Shows iteration count
+- ✅ Filters obsolete fields automatically
+- ✅ Always includes seconds_to_first_non_empty_slot
+
+**To stop:** Press `Ctrl+C`
+
+---
 
 ### Experiment 1: Basic Status Monitor
 
